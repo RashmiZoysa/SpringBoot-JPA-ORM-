@@ -31,7 +31,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void addPayment(PaymentDto dto) {
-        if (paymentRepo.existsById(dto.getPID())) {
+        if (paymentRepo.existsById(dto.getPid())) {
             throw new ValidateException("User Already Exists...");
         }
         paymentRepo.save(mapper.map(dto, Payment.class));
@@ -49,7 +49,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void updatePayment(PaymentDto dto) {
-        if (paymentRepo.existsById(dto.getPID())) {
+        if (paymentRepo.existsById(dto.getPid())) {
             paymentRepo.save(mapper.map(dto, Payment.class));
 
         }
@@ -61,7 +61,7 @@ public class PaymentServiceImpl implements PaymentService {
             throw new ValidateException("No Payment for Delete..!");
         }
         paymentRepo.deleteById(pid);
-        return false;
+        return true;
     }
 
     @Override

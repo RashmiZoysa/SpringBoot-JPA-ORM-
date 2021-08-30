@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 /**
  * @author : Rashmi De Zoysa
@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 public class VehicleType {
     @Id
-    private String VID;
-    private String Type;
+    private String vid;
+    private String type;
 
 }

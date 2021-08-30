@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoleDto {
-
-    private String RID;
-    private String RoleName;
+    private String rid;
+    private String roleName;
 
 }

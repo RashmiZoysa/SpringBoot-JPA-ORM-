@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 public class VehicleTypeDto {
-    private String VID;
-    private String Type;
+    private String vid;
+    private String type;
 
 }

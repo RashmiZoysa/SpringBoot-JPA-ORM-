@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import wixis360.SpringBoot.dto.PaymentDto;
-import wixis360.SpringBoot.dto.UserDto;
 import wixis360.SpringBoot.exception.NotFoundException;
 import wixis360.SpringBoot.service.PaymentService;
 import wixis360.SpringBoot.utill.StandardResponse;
@@ -28,7 +27,7 @@ public class PaymentController {
     @PostMapping
     @ResponseBody
     public ResponseEntity savePayment(@RequestBody PaymentDto dto) {
-        if (dto.getPID().trim().length() <= 0) {
+        if (dto.getPid().trim().length() <= 0) {
             throw new NotFoundException("Payment id cannot be empty");
         }
         paymentService.addPayment(dto);
@@ -43,13 +42,13 @@ public class PaymentController {
     }
 
     @DeleteMapping("/{pid}")
-    public ResponseEntity deletePayment(@RequestParam String pid){
+    public ResponseEntity deletePayment(@PathVariable String pid){
             boolean done = paymentService.deletePayment(pid);
             return new ResponseEntity(new StandardResponse("200", "Done", done), HttpStatus.OK);  }
 
     @PutMapping
     public ResponseEntity updatePayment(@RequestBody PaymentDto dto){
-        if (dto.getPID().trim().length()<=0) {
+        if (dto.getPid().trim().length()<=0) {
             throw new RuntimeException("Customer Not Found...");
         }
         paymentService.updatePayment(dto);

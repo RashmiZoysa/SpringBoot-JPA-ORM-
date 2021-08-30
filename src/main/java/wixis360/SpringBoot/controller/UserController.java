@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping
     @ResponseBody
     public ResponseEntity saveUser(@RequestBody UserDto dto) {
-        if (dto.getUID().trim().length() <= 0) {
+        if (dto.getUid().trim().length() <= 0) {
             throw new NotFoundException("User id cannot be empty");
         }
         userService.addUser(dto);
@@ -54,7 +54,7 @@ public class UserController {
 
     @PutMapping
     public ResponseEntity updateUser(@RequestBody UserDto dto) {
-        if (dto.getUID().trim().length() <= 0) {
+        if (dto.getUid().trim().length() <= 0) {
             throw new RuntimeException("Customer Not Found...");
         }
         userService.updateUser(dto);

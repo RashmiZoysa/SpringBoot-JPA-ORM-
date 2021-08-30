@@ -21,7 +21,7 @@ import java.util.List;
 @Entity
 public class Role {
     @Id
-    private String RID;
-    private String RoleName;
+    private String rid;
+    private String roleName;
 
 }

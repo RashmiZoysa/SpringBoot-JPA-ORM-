@@ -16,9 +16,9 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 public class PaymentDto {
-    private String PID;
-    private String Description;
-    private String Price;
+    private String pid;
+    private String description;
+    private String price;
     private UserDto userDto;
     private VehicleTypeDto vehicleTypeDto;
 

@@ -16,10 +16,10 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 public class UserDto {
-    private String UID;
-    private String FirstName;
-    private String LastName;
-    private String City;
+    private String uid;
+    private String firstName;
+    private String lastName;
+    private String city;
     private RoleDto roleDto;
 
 }

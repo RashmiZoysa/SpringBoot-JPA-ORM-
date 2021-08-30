@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addUser(UserDto dto) {
-        if (userRepo.existsById(dto.getUID())) {
+        if (userRepo.existsById(dto.getUid())) {
             throw new ValidateException("User Already Exists...");
         }
         userRepo.save(mapper.map(dto, User.class));
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(UserDto dto) {
-        if (userRepo.existsById(dto.getUID())) {
+        if (userRepo.existsById(dto.getUid())) {
             userRepo.save(mapper.map(dto, User.class));
 
         }

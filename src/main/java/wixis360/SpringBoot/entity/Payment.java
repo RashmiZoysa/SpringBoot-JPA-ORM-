@@ -18,9 +18,9 @@ import java.util.List;
 @Data
 public class Payment {
     @Id
-    private String PID;
-    private String Description;
-    private String Price;
+    private String pid;
+    private String description;
+    private String price;
     @ManyToOne
     private User user;
     @ManyToOne

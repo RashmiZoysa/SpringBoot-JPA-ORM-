@@ -31,7 +31,7 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
     ModelMapper mapper;
     @Override
     public void addVehicle(VehicleTypeDto dto) {
-        if (vehicleTypeRepo.existsById(dto.getVID())) {
+        if (vehicleTypeRepo.existsById(dto.getVid())) {
             throw new ValidateException("User Already Exists...");
         }
         vehicleTypeRepo.save(mapper.map(dto, VehicleType.class));
@@ -47,7 +47,7 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 
     @Override
     public void updateVehicle(VehicleTypeDto dto) {
-        if (vehicleTypeRepo.existsById(dto.getVID())) {
+        if (vehicleTypeRepo.existsById(dto.getVid())) {
             vehicleTypeRepo.save(mapper.map(dto, VehicleType.class));
 
         }
@@ -55,14 +55,13 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 
     @Override
     public boolean deleteVehicle(String vid) {
-        if (!vehicleTypeRepo.existsById(vid)) {
-            throw new ValidateException("No User for Delete..!");
-        }
-        vehicleTypeRepo.deleteById(vid)
-        ;
+            if (!vehicleTypeRepo.existsById(vid)) {
+                throw new ValidateException("No Customer for Delete..!");
+            }
 
-        return false;
-    }
+            vehicleTypeRepo.deleteById(vid);
+            return true;
+        }
 
     @Override
     public ArrayList<VehicleTypeDto> getAllVehicle() {

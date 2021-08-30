@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wixis360.SpringBoot.dto.RoleDto;
-import wixis360.SpringBoot.entity.Role;
-import wixis360.SpringBoot.exception.ValidateException;
 import wixis360.SpringBoot.repo.RoleRepo;
 import wixis360.SpringBoot.service.RoleService;
 

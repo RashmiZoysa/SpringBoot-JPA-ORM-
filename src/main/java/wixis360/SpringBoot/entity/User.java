@@ -18,10 +18,10 @@ import java.util.List;
 @Data
 public class User {
     @Id
-    private String UID;
-    private String FirstName;
-    private String LastName;
-    private String City;
+    private String uid;
+    private String firstName;
+    private String lastName;
+    private String city;
     @ManyToOne
     private Role role;
     @OneToMany
